@@ -27,16 +27,55 @@ public class MatosForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        infoSocieteTA = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        personneTable = new javax.swing.JTable();
+        societeLabel = new javax.swing.JLabel();
+        ajoutPersonneBT = new javax.swing.JToggleButton();
         mainMenuBar = new javax.swing.JMenuBar();
         fichierMenu = new javax.swing.JMenu();
         chargerSocieteItem = new javax.swing.JMenuItem();
         nouvelleSocieteitem = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
         ajoutTypeItem = new javax.swing.JMenuItem();
-        ajoutPersonneMenu = new javax.swing.JMenu();
+        modifTypeItem = new javax.swing.JMenuItem();
+        personneMenu = new javax.swing.JMenu();
+        ajoutPersonneItem = new javax.swing.JMenuItem();
+        recherchePersonneItem = new javax.swing.JMenuItem();
+        modifPersonneitem = new javax.swing.JMenuItem();
         listeMenu = new javax.swing.JMenu();
+        listTypeMatItem = new javax.swing.JMenuItem();
+        listMatItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Matos");
+
+        infoSocieteTA.setColumns(20);
+        infoSocieteTA.setRows(5);
+        jScrollPane1.setViewportView(infoSocieteTA);
+
+        personneTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Matricule", "Nom", "Prenom", "Emplois", "Nbr de materiel"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(personneTable);
+
+        societeLabel.setText("Société :");
+
+        ajoutPersonneBT.setText("Ajout d'une personne");
 
         fichierMenu.setText("Fichier");
 
@@ -53,12 +92,32 @@ public class MatosForm extends javax.swing.JFrame {
         ajoutTypeItem.setText("Nouveau Type");
         editMenu.add(ajoutTypeItem);
 
+        modifTypeItem.setText("Modifier type");
+        editMenu.add(modifTypeItem);
+
         mainMenuBar.add(editMenu);
 
-        ajoutPersonneMenu.setText("Ajouter une personne");
-        mainMenuBar.add(ajoutPersonneMenu);
+        personneMenu.setText("Personne");
+
+        ajoutPersonneItem.setText("Ajout");
+        personneMenu.add(ajoutPersonneItem);
+
+        recherchePersonneItem.setText("Recherche");
+        personneMenu.add(recherchePersonneItem);
+
+        modifPersonneitem.setText("Modification");
+        personneMenu.add(modifPersonneitem);
+
+        mainMenuBar.add(personneMenu);
 
         listeMenu.setText("Liste");
+
+        listTypeMatItem.setText("Liste type de matériel");
+        listeMenu.add(listTypeMatItem);
+
+        listMatItem.setText("Liste Materiel");
+        listeMenu.add(listMatItem);
+
         mainMenuBar.add(listeMenu);
 
         setJMenuBar(mainMenuBar);
@@ -67,14 +126,37 @@ public class MatosForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 996, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(societeLabel))
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ajoutPersonneBT)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 624, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(societeLabel)
+                    .addComponent(ajoutPersonneBT))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 298, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2))
+                .addContainerGap())
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -113,13 +195,25 @@ public class MatosForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu ajoutPersonneMenu;
+    private javax.swing.JToggleButton ajoutPersonneBT;
+    private javax.swing.JMenuItem ajoutPersonneItem;
     private javax.swing.JMenuItem ajoutTypeItem;
     private javax.swing.JMenuItem chargerSocieteItem;
     private javax.swing.JMenu editMenu;
     private javax.swing.JMenu fichierMenu;
+    private javax.swing.JTextArea infoSocieteTA;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JMenuItem listMatItem;
+    private javax.swing.JMenuItem listTypeMatItem;
     private javax.swing.JMenu listeMenu;
     private javax.swing.JMenuBar mainMenuBar;
+    private javax.swing.JMenuItem modifPersonneitem;
+    private javax.swing.JMenuItem modifTypeItem;
     private javax.swing.JMenuItem nouvelleSocieteitem;
+    private javax.swing.JMenu personneMenu;
+    private javax.swing.JTable personneTable;
+    private javax.swing.JMenuItem recherchePersonneItem;
+    private javax.swing.JLabel societeLabel;
     // End of variables declaration//GEN-END:variables
 }
