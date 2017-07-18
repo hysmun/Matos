@@ -51,6 +51,7 @@ public class MatosForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Matos");
 
+        infoSocieteTA.setEditable(false);
         infoSocieteTA.setColumns(20);
         infoSocieteTA.setRows(5);
         jScrollPane1.setViewportView(infoSocieteTA);
